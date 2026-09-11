@@ -1,6 +1,6 @@
 {
   "name": "evo-subagent",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Unified DeepSeek Harness plugin: role-based subagent routing + per-agent evolution — prefercmd/memory as knowledge allow/deny lists, so repeated tasks start from proven commands and save tokens",
   "type": "module",
   "main": "index.js",
@@ -48,10 +48,10 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.1",
-    "@deepseek-ai/dsh-llm": "^0.1.1-rc.2",
-    "@deepseek-ai/dsh-subagent": "^0.1.1-rc.2",
-    "@deepseek-ai/dsh-tools": "^0.1.1-rc.2"
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-llm": "^0.1.5-rc.1",
+    "@deepseek-ai/dsh-subagent": "^0.1.5-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.1.5-rc.1"
   },
   "dsh": {
     "bundle": {
@@ -64,10 +64,10 @@
     }
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24.2.0"
   },
   "packageManager": "pnpm@11.19.0",
   "devDependencies": {
-    "@deepseek-ai/dsh": "0.1.1-rc.2"
+    "@deepseek-ai/dsh": "0.1.5-rc.1"
   }
 }

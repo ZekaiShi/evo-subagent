@@ -30,6 +30,8 @@ It maps stable agent roles to registered provider/model pairs, remembers verifie
 
 ## Installation
 
+Requires DeepSeek Harness `0.1.5-rc.1` or newer and Node.js `>=24.2.0`.
+
 ```sh
 dsh plugin add evo-subagent
 ```
@@ -154,7 +156,7 @@ Invalid bindings fail before a child is created. Missing bindings preserve nativ
 
 ## Development
 
-Requires Node.js 22 or newer.
+Requires Node.js 24.2 or newer.
 
 ```sh
 npm test

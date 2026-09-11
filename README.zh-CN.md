@@ -30,6 +30,8 @@
 
 ## 安装
 
+需要 DeepSeek Harness `0.1.5-rc.1` 或更高版本，以及 Node.js `>=24.2.0`。
+
 ```sh
 dsh plugin add evo-subagent
 ```
@@ -154,7 +156,7 @@ Main agent 的进化数据位于 `.evo_subagent/evolution/main/`。绑定或解�
 
 ## 开发
 
-需要 Node.js 22 或更高版本。
+需要 Node.js 24.2 或更高版本。
 
 ```sh
 npm test
