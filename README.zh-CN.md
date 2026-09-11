@@ -47,6 +47,16 @@ dsh plugin add evo-subagent
 
 [下载 MP4 教程](assets/evo-subagent-tutorial.mp4)
 
+## 更新日志
+
+每次维护发布都会在顶部增加一条更新记录。
+
+### 0.6.0 — 2026-09-12
+
+- 适配 DeepSeek Harness `0.1.5-rc.1` 与 Cordis `4.0.2`。
+- 为匹配新版 DSH CLI，将 Node.js 最低版本调整为 `>=24.2.0`。
+- 已在新版运行时重新验证路由、工作区进化和设置功能。
+
 ## Agent 绑定
 
 在项目中创建 `agents/` 目录，每个角色对应一个 Markdown 文件。文件名即 `agent_key`。
