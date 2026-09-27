@@ -30,7 +30,7 @@
 
 ## 安装
 
-需要 DeepSeek Harness `0.1.5-rc.1` 或更高版本，以及 Node.js `>=24.2.0`。
+需要 DeepSeek Harness `0.1.5-rc.3` 或更高版本，以及 Node.js `>=24.2.0`。
 
 ```sh
 dsh plugin add evo-subagent
@@ -50,6 +50,17 @@ dsh plugin add evo-subagent
 ## 更新日志
 
 每次维护发布都会在顶部增加一条更新记录。
+
+### 0.7.0 — 2026-09-27
+
+- 将开发验证基线更新至 DeepSeek Harness `0.1.5-rc.3`。
+- 随插件提供三个 DSH Agent Skill，分别用于路由诊断、进化记忆整理与委派任务设计；技能服务可用时会显示在 DSH 技能列表中。
+- 确认子代理路由接口未变化。
+
+### 0.6.1 — 2026-09-19
+
+- 将开发验证基线更新至 DeepSeek Harness `0.1.5-rc.2`。
+- 在不改变插件行为的前提下，重新检查路由、工作区进化和设置相关测试。
 
 ### 0.6.0 — 2026-09-12
 
@@ -106,6 +117,18 @@ provider 和 model 必须已经注册，匹配区分大小写。
 | `wps-worker` | 办公文档制作 |
 
 项目中存在同名绑定时，项目绑定优先于内置模板。
+
+## 随包提供的 Agent Skill
+
+安装插件后，以下三个兼容 DSH 的技能会注册到 DSH 技能列表。它们用于指导主 Agent，不会增加新的 Subagent 角色。
+
+| Skill | 用途 |
+| --- | --- |
+| `/evo-route-doctor` | 诊断模型路由不符、继承路径或未注册的 provider/model。 |
+| `/evo-memory-review` | 检查角色的 `prefercmd.md` 与 `memory.md`，整理过期或冲突的知识。 |
+| `/evo-delegation-guide` | 选择已有角色并准备边界明确的委派任务。 |
+
+DSH 需要启用技能注册服务和技能工具才能显示这些条目。项目内同名技能可覆盖随包技能。技能文件也随 npm 包保存在 `skills/` 下。
 
 ## 进化
 

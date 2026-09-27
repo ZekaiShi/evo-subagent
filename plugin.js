@@ -19,6 +19,7 @@ import {
 } from './evolution.js'
 import { resolveSessionScope, detectProjectsIn, findProjectRoot, hasDir } from './scope.js'
 import { ensureWorkspaceProvisioned } from './evolution.js'
+import { registerBundledSkills } from './skills.js'
 
 function loadRuntimeConfig(evolutionDir) {
   try {
@@ -528,6 +529,9 @@ export function createApply(defineTool) {
     // profile, and settings only when the settings page can dispatch cards.
     // Absent either, the plugin stays a pure host tool (headless profiles).
     if (typeof ctx.inject === 'function') {
+      ctx.inject(['skills'], ({ skills }) => {
+        if (typeof skills?.register === 'function') registerBundledSkills(skills)
+      })
       // The web profile's registered workspaces: the universal, per-machine
       // scan source for the settings card. Read lazily at request time, so a
       // registry that appears later (or never, on headless profiles) is

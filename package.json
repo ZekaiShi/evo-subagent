@@ -1,6 +1,6 @@
 {
   "name": "evo-subagent",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Unified DeepSeek Harness plugin: role-based subagent routing + per-agent evolution — prefercmd/memory as knowledge allow/deny lists, so repeated tasks start from proven commands and save tokens",
   "type": "module",
   "main": "index.js",
@@ -16,6 +16,8 @@
     "binding.js",
     "evolution.js",
     "scope.js",
+    "skills.js",
+    "skills",
     "cordis.patch.yml",
     "templates",
     "dsh",
@@ -25,7 +27,7 @@
   ],
   "scripts": {
     "test": "node --test --test-isolation=none",
-    "check": "node --check index.js && node --check plugin.js && node --check binding.js && node --check evolution.js && node --check scope.js",
+    "check": "node --check index.js && node --check plugin.js && node --check binding.js && node --check evolution.js && node --check scope.js && node --check skills.js",
     "prepack": "npm run check && npm test"
   },
   "keywords": [
@@ -49,9 +51,9 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.2",
-    "@deepseek-ai/dsh-llm": "^0.1.5-rc.1",
-    "@deepseek-ai/dsh-subagent": "^0.1.5-rc.1",
-    "@deepseek-ai/dsh-tools": "^0.1.5-rc.1"
+    "@deepseek-ai/dsh-llm": "^0.1.5-rc.3",
+    "@deepseek-ai/dsh-subagent": "^0.1.5-rc.3",
+    "@deepseek-ai/dsh-tools": "^0.1.5-rc.3"
   },
   "dsh": {
     "bundle": {
@@ -68,6 +70,6 @@
   },
   "packageManager": "pnpm@11.19.0",
   "devDependencies": {
-    "@deepseek-ai/dsh": "0.1.5-rc.1"
+    "@deepseek-ai/dsh": "0.1.5-rc.3"
   }
 }

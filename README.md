@@ -30,7 +30,7 @@ It maps stable agent roles to registered provider/model pairs, remembers verifie
 
 ## Installation
 
-Requires DeepSeek Harness `0.1.5-rc.1` or newer and Node.js `>=24.2.0`.
+Requires DeepSeek Harness `0.1.5-rc.3` or newer and Node.js `>=24.2.0`.
 
 ```sh
 dsh plugin add evo-subagent
@@ -50,6 +50,17 @@ dsh plugin add evo-subagent
 ## Changelog
 
 New entries are added at the top for every maintained release.
+
+### 0.7.0 — 2026-09-27
+
+- Refreshed the development validation baseline to DeepSeek Harness `0.1.5-rc.3`.
+- Bundled three DSH Agent Skills for route diagnosis, memory review, and delegation guidance. They appear in the DSH skill catalog when the skill service is available.
+- Confirmed the subagent routing seam remains unchanged.
+
+### 0.6.1 — 2026-09-19
+
+- Refreshed the development validation baseline to DeepSeek Harness `0.1.5-rc.2`.
+- Rechecked routing, workspace evolution, and settings tests without changing plugin behavior.
 
 ### 0.6.0 — 2026-09-12
 
@@ -106,6 +117,18 @@ Three templates are included:
 | `wps-worker` | Office document production |
 
 A project binding with the same `agent_key` overrides its built-in template.
+
+## Bundled Agent Skills
+
+Installing this plugin also registers three optional DSH-compatible skills in the DSH skill catalog. They guide the parent agent; they are not additional subagent roles.
+
+| Skill | Purpose |
+| --- | --- |
+| `/evo-route-doctor` | Diagnose an unexpected route or invalid registered provider/model pair. |
+| `/evo-memory-review` | Review a role's `prefercmd.md` and `memory.md` for stale or conflicting knowledge. |
+| `/evo-delegation-guide` | Choose an existing role and prepare a scoped subagent task. |
+
+DSH needs its skill registry and skill tool enabled for these entries to appear. A project-specific skill with the same name can override a bundled entry. The skill files are also included in the npm package under `skills/`.
 
 ## Evolution
 
